@@ -1,16 +1,14 @@
 # beon-handson
 
-API Scenarios
-Scenario Outline:
+## 💻 Project
+<p>Hands on for BEON TECH</p>
 
+## UI Scenarios
+<p>Given access to Google Search Page</p>
+<p>When write a keyword in input field</p>
+<p>Then validate the search results contain the keyword</p>
 
-
-UI Scenarios
-Given access to Google Search Page
-When write a keyword in input field
-Then validate the search results contain the keyword
-
-Given access to Google Search Page
-When write a keyword in input field
-And click on the first result
-Then validate the page url matches the url shown on google page
+<p>Given access to Google Search Page</p>
+<p>When write a keyword in input field</p>
+<p>And click on the first result</p>
+<p>Then validate the page url matches the url shown on google page</p>
