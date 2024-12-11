@@ -25,7 +25,6 @@ scenarios.forEach((scenario) => {
       }
     }
 
-    // Valida que a palavra-chave foi encontrada em pelo menos um resultado
     expect(found).toBeTruthy();
   });
 
