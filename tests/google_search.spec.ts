@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
 
 const scenarios = [
-  // {keyword: 'Playwright'},
-  // {keyword: 'Beon'},
+  {keyword: 'Playwright'},
+  {keyword: 'Beon'},
   {keyword: 'Typescript'}
 ]
 
@@ -12,18 +12,21 @@ scenarios.forEach((scenario) => {
     await page.locator('[name="q"]').fill(scenario.keyword);
     await page.keyboard.press('Enter')
     
-    const results = await page.locator('#search .g');
+    const results = page.locator('#search .g');
+    await expect(results.first()).toBeVisible();
     const resultsCount = await results.count();
 
-    let found = false
-    for(let i = 0; i < resultsCount; i++) {
-      const text = await results.nth(i).textContent()
-      if (text && text.toLowerCase().includes(scenario.keyword.toLowerCase())){
+    let found = false;
+    for (let i = 0; i < resultsCount; i++) {
+      const text = await results.nth(i).textContent();
+      if (text && text.toLowerCase().includes(scenario.keyword.toLowerCase())) {
         found = true;
         break;
       }
     }
-    expect(found).toBeTruthy()
+
+    // Valida que a palavra-chave foi encontrada em pelo menos um resultado
+    expect(found).toBeTruthy();
   });
 
 });

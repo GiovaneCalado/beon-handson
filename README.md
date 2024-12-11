@@ -5,7 +5,7 @@ Scenario Outline:
 
 
 
-UI Scenarios - needs to be fixed
+UI Scenarios
 Given access to Google Search Page
 When write a keyword in input field
 Then validate the search results contain the keyword
